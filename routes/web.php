@@ -19,3 +19,17 @@ Route::get('/dragon_ball',function()
 {
     return view('dragon-ball.dragonBall');
 })->name('dragon-ball');
+
+Route::resource('carros','CarroController');
+
+Route::get('/carro',function(){
+    return view('registros');
+})->name('carro');
+
+Route::get('/cuadro1',function(){
+    return view('dragon-ball.cuadro1');
+})->name('cuadro1');
+
+Route::get('/cuadro2',function(){
+    return view('dragon-ball.cuadro2');
+})->name('cuadro2');
