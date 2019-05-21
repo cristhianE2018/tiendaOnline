@@ -33,3 +33,5 @@ Route::get('/cuadro1',function(){
 Route::get('/cuadro2',function(){
     return view('dragon-ball.cuadro2');
 })->name('cuadro2');
+
+Route::get('/dragon-ball/cuadros/{codigo}','ProductoController@prueba')->name('ruta');

@@ -24,7 +24,7 @@
 
         <div class="row">
                 <div class="col-md-4">
-                    <a href="{{ route('cuadro1')}}">
+                    <a href="#">
                     <div class="card" style="width: 20rem;">
                         <img src="mercancia/cuadros/cuadro1.jpeg" class="card-img-top" alt="...">
                             <div class="card-body d-flex align-items-center">
@@ -33,7 +33,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="{{ route('cuadro2') }}">
+                    <a href="{{ route('ruta','123') }}">
                 <div class="card" style="width: 20rem;">
                         <img src="mercancia/cuadros/cuadro3.jpeg" class="img-fluid" alt="...">
                             <div class="card-body d-flex align-items-center">
@@ -43,12 +43,14 @@
                 </div>
 
                 <div class="col-md-4">
+                    <a href="{{ route('ruta','1234') }}">
                         <div class="card" style="width: 20rem;">
                                 <img src="mercancia/cuadros/cuadro2.jpeg" class="card-img-top" alt="...">
                                     <div class="card-body d-flex align-items-center">
 
                                     </div>
                             </div>
+                    </a>
                 </div>
         </div>
 
