@@ -1,6 +1,5 @@
 body{
-    background-color: #BEC1C2;
-    background-image: url("../img/disenio/fondo.jpg");
+    background-image: url("../img/disenio/fondo.jpg"); 
 }
 .carro{
     opacity: 0.4;
