@@ -15,10 +15,8 @@ Route::get('/', function () {
     return view('plantilla-base');
 })->name('inicio');
 
-Route::get('/dragon_ball',function()
-{
-    return view('dragon-ball.dragonBall');
-})->name('dragon-ball');
+Route::get('/dragon_ball','CarroController@index')->name('dragon-ball');
+
 
 Route::resource('carros','CarroController');
 
@@ -34,4 +32,10 @@ Route::get('/cuadro2',function(){
     return view('dragon-ball.cuadro2');
 })->name('cuadro2');
 
-Route::get('/dragon-ball/cuadros/{codigo}','ProductoController@prueba')->name('ruta');
+Route::get('/dragon_ball/{codigo}','ProductoController@prueba')->name('ruta');
+
+Route::get('/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}','CarroController@guardar')->name('envio');
+
+Route::get('/carrito','CarroController@mostrar')->name('verCarro');
+
+Route::get('/carrito/{codigo}','CarroController@eliminar')->name('delete');

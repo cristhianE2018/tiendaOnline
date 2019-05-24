@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/dist/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('efecto_zoom/wm-zoom/jquery.wm-zoom-1.0.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('data-tables/datatables.css') }}">
 </head>
 <body class="cuerpo">
     <!-- Menu de navegacion -->
@@ -24,42 +25,51 @@
             <a class="nav-link" href="{{ route("dragon-ball") }}"><i class="fas fa-home"></i>Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-comments-dollar"></i>Ofertas</a>
+            <a class="nav-link" href="#modalCanva" data-toggle="modal"><i class="fas fa-comments-dollar"></i>Ofertas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('carros.index') }}"> <i class="fas fa-shopping-cart"></i> ver carrito</a>
+            <a class="nav-link" href="{{ route('verCarro') }}"> <i class="fas fa-shopping-cart"></i> ver carrito</a>
           </li>
-          <li class="nav-item">
-              <a href="" class="nav-link"> Compra en linea</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mercancia
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#cuadros">Cuadros</a>
+              <a class="dropdown-item" href="#calzado">Calzado</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#camisas">Camisas</a>
+            </div>
           </li>
         </ul>
       </div>
       
-      <a href="#" class="nav-link"> <i class="fab fa-facebook-f"></i> </a>
-      <a href="#" class="nav-link"> <i class="fab fa-twitter"></i> </a>
-      <a href="#" class="nav-link"> <i class="fab fa-instagram"></i> </a>
-      <a href="#" class="nav-link"> <i class="fab fa-youtube"></i></a>
+      
     </nav>
-            <br><br><hr>
-              <div class="container-fluid bg-info">
-                <div class="row">
-                  <div class="col-md-12 d-flex flex-row justify-content-around">
-                    <h5><i class="fas fa-phone"></i> Telefono: 288-113-86-73 </h5>
-                    <h5> <i class="fas fa-envelope-open-text"></i> Email: FanAnime@gmail.com </h5>
-                    <h5> Metodos de pago: <i class="fab fa-cc-paypal"></i></h5>
-                  </div>
-                </div>
-              </div>
-              <br>
+          
+              <br><br>
                         @yield('content')
     
-
-    <script src="bootstrap/js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="fontawesome-free/js/all.js"></script>
-    <script src="sweetalert2/dist/sweetalert2.all.js"></script>
-    <script src="efecto_zoom/wm-zoom/jquery.wm-zoom-1.0.min.js"></script>
-
+      <footer class="container-fluid d-flex justify-content-center">
+        <div class="row">
+          <div class="col-md-6">
+            <h6 class="derechos">Copyright: Cristhian Enrique Olivares Lara ft Samuel Gomez Balderas</h6>
+          </div>
+          <div class="col-md-6">
+            <h4 class="derechos">Visita nuestras redes sociales: </h4>
+            <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="#"> <i class="fab fa-twitter"></i> </a>
+            <a href="#"> <i class="fab fa-instagram"></i> </a>
+            <a href="#"> <i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </footer>
+      @include('modalCanva')
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../fontawesome-free/js/all.js"></script>
+    <script src="../sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../data-tables/datatables.js"></script>
   </body>
 </html>
 @yield('codigoJs')

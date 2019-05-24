@@ -21,6 +21,7 @@ class ProductoController extends Controller
         $produc = Producto::find($codigo);
         return view('dragon-ball.cuadro1',compact('produc'));
     }
+
     /**
      * Show the form for creating a new resource.
      *

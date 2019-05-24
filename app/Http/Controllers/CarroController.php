@@ -14,83 +14,34 @@ class CarroController extends Controller
      */
     public function index()
     {
+        $suma = Carro::sum('cantidad');
+        return view('dragon-ball.dragonBall',compact('suma'));
+    }
+    public function eliminar($codigo)
+    {
         $query = Carro::all();
-        return view('registros',compact('query'));
+        $query2 = Carro::sum('subTotal');
+        Carro::destroy($codigo);
+        return view('registros',compact('query'),compact('query2'));
     }
-    public function prueba($codigo_producto)
+    public function mostrar()
     {
-        return view('dragon-ball.cuadro1',["mensaje"=>$codigo_producto]);
+        $query = Carro::all();
+        $query2 = Carro::sum('subTotal');
+        return view('registros',compact('query'),compact('query2'));
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function guardar($code,$name,$description,$price,$cantidad)
     {
-        //
+        $car = new Carro;
+        $car->id = $code;
+        $car->nombre = $name;
+        $car->descripcion= $description;
+        $car->precio = $price;
+        $car->cantidad = $cantidad;
+        $car->subTotal = $price;
+        $car->save();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'txtcodigo' => 'required',
-            'txtnombre' => 'required',
-            'txtdescripcion' => 'required',
-            'txtprecio' => 'required',
-            'txtcantidad' => 'required'
-        ]);
-        Carro::create($request->all());
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Carro $carro)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Carro $carro)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Carro $carro)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Carro  $carro
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Carro $carro)
-    {
-        //
-    }
+   
 }
