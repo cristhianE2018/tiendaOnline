@@ -44,7 +44,9 @@ class CarroController extends Controller
         $car->cantidad = $cantidad;
         $car->subTotal = $price;
         $car->save();
+        return redirect()->route('verCarro');
     }
+    
     //FUNCION QUE ALMACENA UN PRODUCTO EN EL CARRITO
     public function guardar($code,$name,$description,$price,$cantidad)
     {

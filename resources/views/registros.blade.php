@@ -17,30 +17,32 @@
                 <th> Descripcion </th>
                 <th> Precio </th>
                 <th> Cantidad </th>
-                <th> Mofidica </th>
                 <th> SubTotal </th>
-                <th> Modificar </th>
                 <th> Eliminar </th>
             </tr>
         </thead>
         <tbody>
             @foreach ($query as $pro)
             <tr>
-                
                 <td>{{ $pro->id }}</td>
                 <td>{{ $pro->nombre }}</td>
                 <td>{{ $pro->descripcion }}</td>
                 <td>{{ $pro->precio }}</td>
-                <td>{{$pro->cantidad}}</td>
-                <td> <input type="number" id="canti" name="can" class="cant"> </td>
-                <td>{{ $pro->subTotal }}</td>
-                <td> <a href="{{ route('update',[$pro->id,
+                <td>{{$pro->cantidad}} <a href="{{ route('update',[$pro->id,
                     $pro->nombre,
                   $pro->descripcion,
                   $pro->precio,
-                  "cantidad"=> "2"
-                  ])}}"> Modificar </a> </td>
-                <td> <a href="{{ route('delete',$pro->id) }}"> Eliminar </a> </td>
+                  "cantidad"=> $pro->cantidad+1
+                  ])}}"> <i class="fas fa-plus-square"></i> </a>
+                   <a href="{{ route('update',[$pro->id,
+                    $pro->nombre,
+                  $pro->descripcion,
+                  $pro->precio,
+                  "cantidad"=> $pro->cantidad-1
+                  ])}}"> <i class="fas fa-minus-circle"></i> </a>
+                </td>
+                <td>{{ $pro->subTotal }}</td>
+                <td> <a href="{{ route('delete',$pro->id) }}" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar </a> </td>
             </tr>
             
             @endforeach
