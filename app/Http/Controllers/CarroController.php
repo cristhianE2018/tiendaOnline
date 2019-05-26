@@ -35,14 +35,14 @@ class CarroController extends Controller
         return view('registros',compact('query'),compact('query2'));
     }
 
-    public function actualizar($code,$name,$description,$price,$cantidad)
+    public function actualizar($code,$name,$description,$price,$cantidad,$subtot)
     {
         $car = Carro::find($code);
         $car->nombre = $name;
         $car->descripcion= $description;
         $car->precio = $price;
         $car->cantidad = $cantidad;
-        $car->subTotal = $price;
+        $car->subTotal = $subtot;
         $car->save();
         return redirect()->route('verCarro');
     }

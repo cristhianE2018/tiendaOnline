@@ -28,7 +28,7 @@ Route::get('/cuadro2',function(){
     return view('dragon-ball.cuadro2');
 })->name('cuadro2');
 
-Route::get('/carrito/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}','CarroController@actualizar')->name('update');
+Route::get('/carrito/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}/{subtotal}','CarroController@actualizar')->name('update');
 
 Route::get('/dragon_ball/{codigo}','ProductoController@prueba')->name('ruta');
 
