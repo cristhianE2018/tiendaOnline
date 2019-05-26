@@ -32,6 +32,10 @@ body{
 .container-info{
     color: #252526;
 }
+.btn-pagar{
+    background: #2A343D;
+    color: white;
+}
 .btn-carrito{
     background: #E8E8E8;
     color: black;

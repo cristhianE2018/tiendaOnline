@@ -57,8 +57,8 @@
           </div>
           <div class="col-md-6">
             <h4 class="derechos">Visita nuestras redes sociales: </h4>
-            <a href="#"> <i class="fab fa-facebook-f"></i> </a>
-            <a href="#"> <i class="fab fa-twitter"></i> </a>
+            <a href="https://www.facebook.com/DragonBallonline-343796013206644/?modal=admin_todo_tour"> <i class="fab fa-facebook-f"></i> </a>
+            <a href="https://www.paypal.com/business"> <i class="fab fa-twitter"></i> </a>
             <a href="#"> <i class="fab fa-instagram"></i> </a>
             <a href="#"> <i class="fab fa-youtube"></i></a>
           </div>

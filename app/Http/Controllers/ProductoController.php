@@ -19,7 +19,7 @@ class ProductoController extends Controller
     public function prueba($codigo)
     {
         $produc = Producto::find($codigo);
-        return view('dragon-ball.cuadro1',compact('produc'));
+        return view('dragon-ball.cuadro1',compact('produc'),['mensaje'=>'producto']);
     }
 
     /**
