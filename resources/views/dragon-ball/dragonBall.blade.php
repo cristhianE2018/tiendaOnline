@@ -1,9 +1,7 @@
 @extends('plantilla-base')
 
 @section('content')
-        <br>
-        <br>
-        <h3> Tienes un total de {{ $suma }} productos en tu carrito <i class="fas fa-shopping-cart"></i></h3> 
+        <br> 
     <div class="container-fluid fondoGoku">
         <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">

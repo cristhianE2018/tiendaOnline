@@ -15,8 +15,7 @@ class CarroController extends Controller
      */
     public function index()
     {
-        $suma = Carro::sum('cantidad');
-        return view('dragon-ball.dragonBall',compact('suma'));
+        return view('dragon-ball.dragonBall');
     }
 
     //ELIMINA EL PRODUCTO CON EL CODIGO QUE TIENE DE PARAMETRO
@@ -33,6 +32,17 @@ class CarroController extends Controller
         $query = Carro::all();
         $query2 = Carro::sum('subTotal');
         return view('registros',compact('query'),compact('query2'));
+    }
+
+    public function deleteAll()
+    {
+        $query = Carro::all();
+        foreach ($query as $pro) 
+           { 
+               Carro::destroy($pro->id);
+           }
+        return redirect()->route('verCarro');
+
     }
 
     public function actualizar($code,$name,$description,$price,$cantidad,$subtot)
@@ -58,7 +68,7 @@ class CarroController extends Controller
         $car->cantidad = $cantidad;
         $car->subTotal = $price;
         $car->save();
-        return redirect()->route('ruta',$code);
+        return redirect()->route('verCarro');
     }
 
 

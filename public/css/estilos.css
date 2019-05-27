@@ -1,8 +1,12 @@
 body{
-    background-image: url("../img/disenio/fondo.jpg"); 
+    background-color: #E8E8E8;
 }
 .carro{
     opacity: 0.4;
+}
+.thead{
+    background: #239AD4;
+    color: whitesmoke;
 }
 .btn-add{
     background: #00C4CC;

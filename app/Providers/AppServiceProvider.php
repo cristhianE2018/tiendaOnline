@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use App\Carro;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $suma = Carro::sum('cantidad');
+        View::share('suma',$suma);
     }
 }

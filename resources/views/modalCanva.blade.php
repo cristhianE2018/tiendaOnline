@@ -10,10 +10,6 @@
         <div class="modal-body">
           <img src="{{ asset('img/disenio/FanAnime!.png') }}" alt="">
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Agregar al carrito</button>
-        </div>
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,13 +9,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//RUTAS PARA VER LAS VISTAS
 Route::get('/', function () {
     return view('plantilla-base');
 })->name('inicio');
 
 Route::get('/dragon_ball','CarroController@index')->name('dragon-ball');
-
 
 Route::resource('carros','CarroController');
 
@@ -24,9 +22,9 @@ Route::get('/cuadro1',function(){
     return view('dragon-ball.cuadro1');
 })->name('cuadro1');
 
-Route::get('/cuadro2',function(){
-    return view('dragon-ball.cuadro2');
-})->name('cuadro2');
+
+//RUTAS PARA EL CRUD
+
 
 Route::get('/carrito/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}/{subtotal}','CarroController@actualizar')->name('update');
 
@@ -34,7 +32,7 @@ Route::get('/dragon_ball/{codigo}','ProductoController@prueba')->name('ruta');
 
 Route::get('/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}','CarroController@guardar')->name('envio');
 
-
+Route::get('/carrito/delete','CarroController@deleteAll')->name('eliminarTodo');
 
 Route::get('/carrito','CarroController@mostrar')->name('verCarro');
 
