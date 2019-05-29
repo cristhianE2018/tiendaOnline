@@ -1,18 +1,21 @@
 @extends('plantilla-base')
 
-@section('content')
-        <br> 
+@section('content') 
     <div class="container-fluid fondoGoku">
         <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
-                    <img src="img/disenio/imagen2.jpg" class="fotoGoku" width="1300px" height="500px">
+                    <img src="img/disenio/imagen2.jpg" class="fotoGoku" width="1311px" height="500px">
                 </div>
         </div>
         <hr>
         
         <!-- CUADROS -->
-        
-        <div class="row container-fluid" id="cuadros">
+        <div class="row" id="cuadros">
+                <div class="col-md-12 d-flex justify-content-center">
+                        <h2 class="text-muted"> Cuadros </h2>
+                </div>
+        </div>
+        <div class="row container-fluid">
                 <div class="col-md-4">
                     <a href="{{ route('ruta','321') }}">
                     <div class="card" style="width: 20rem;">

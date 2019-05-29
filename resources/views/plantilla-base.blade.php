@@ -46,8 +46,23 @@
         </ul>
       </div>
     </nav>
-          
-              <br><br>
+    <br><br><br>
+          <div class="container">
+            <div class="row">
+            <div class="col-md-4">
+              <h4> <i class="fas fa-user"></i> CristhianEnrique </h4>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+              <h2>
+                  <a href="https://www.facebook.com/DragonBallonline-343796013206644/?modal=admin_todo_tour"> <i class="fab fa-facebook-f"></i> </a>
+                  <a href="https://www.paypal.com/business"> <i class="fab fa-twitter"></i> </a>
+                <a href="#"> <i class="fab fa-instagram"></i> </a>
+                <a href="#"> <i class="fab fa-youtube"></i></a>
+              </h2>
+            </div>
+            </div>
+          </div>
+          <hr>
                         @yield('content')
     
       <footer class="container-fluid d-flex justify-content-center">

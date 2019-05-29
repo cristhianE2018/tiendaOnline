@@ -10,13 +10,8 @@
 |
 */
 //RUTAS PARA VER LAS VISTAS
-Route::get('/', function () {
-    return view('plantilla-base');
-})->name('inicio');
 
 Route::get('/dragon_ball','CarroController@index')->name('dragon-ball');
-
-Route::resource('carros','CarroController');
 
 Route::get('/cuadro1',function(){
     return view('dragon-ball.cuadro1');
@@ -26,7 +21,7 @@ Route::get('/cuadro1',function(){
 //RUTAS PARA EL CRUD
 
 
-Route::get('/carrito/{codigo}/{nombre}/{descripcion}/{precio}/{cantidad}/{subtotal}','CarroController@actualizar')->name('update');
+Route::get('/carrito/{codigo}/{cantidad}/{subtotal}','CarroController@actualizar')->name('update');
 
 Route::get('/dragon_ball/{codigo}','ProductoController@prueba')->name('ruta');
 

@@ -34,6 +34,7 @@ class CarroController extends Controller
         return view('registros',compact('query'),compact('query2'));
     }
 
+    //FUNCION PARA ELIMINAR TODOS LOS PRODUCTOS DEL CARRITO
     public function deleteAll()
     {
         $query = Carro::all();
@@ -45,12 +46,10 @@ class CarroController extends Controller
 
     }
 
-    public function actualizar($code,$name,$description,$price,$cantidad,$subtot)
+    //FUNCION PARA ACTUALIZAR UN REGISTRO
+    public function actualizar($code,$cantidad,$subtot)
     {
         $car = Carro::find($code);
-        $car->nombre = $name;
-        $car->descripcion= $description;
-        $car->precio = $price;
         $car->cantidad = $cantidad;
         $car->subTotal = $subtot;
         $car->save();

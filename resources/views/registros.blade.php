@@ -30,16 +30,10 @@
                 <td>{{ $pro->descripcion }}</td>
                 <td>{{ $pro->precio }}</td>
                 <td>{{$pro->cantidad}} <a href="{{ route('update',[$pro->id,
-                    $pro->nombre,
-                  $pro->descripcion,
-                  $pro->precio,
                   "cantidad"=> $pro->cantidad+1,
                   "subtot" => $pro->precio*($pro->cantidad+1)
                   ])}}"> <i class="fas fa-plus-square"></i> </a>
                    <a href="{{ route('update',[$pro->id,
-                    $pro->nombre,
-                  $pro->descripcion,
-                  $pro->precio,
                   "cantidad"=> $pro->cantidad-1,
                   "subtot" => $pro->precio*($pro->cantidad-1)
                   ])}}"> <i class="fas fa-minus-circle"></i> </a>
@@ -54,8 +48,7 @@
     </table>
 </div>
 </div>
-    
-    
+
 </div>
 
 @endsection
